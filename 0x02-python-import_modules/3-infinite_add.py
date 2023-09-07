@@ -1,9 +1,14 @@
 #!/usr/bin/python3
-
-from sys import argv
+import sys
 
 if __name__ == "__main__":
-    # Skip the first element (script name) and convert arguments to integers while summing them
-    result = sum(int(arg) for arg in argv[1:])
-    print(result)
+    args = sys.argv[1:]  # Exclude the script name from the arguments
+    total = 0
+
+    for arg in args:
+        total += int(arg)
+
+    print(total)
+
+
 
