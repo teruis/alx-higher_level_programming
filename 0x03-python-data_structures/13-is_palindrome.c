@@ -1,43 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
-int is_palindrome(listint_t **head) {
-  listint_t *slow = *head;
-  listint_t *fast = *head;
+int len_list(listint_t *head)
+{
+	int i = 0;
+	listint_t *h = head;
 
-  if (*head == NULL || (*head)->next == NULL) {
-    return (1); 
-  }
-
-  while (fast != NULL && fast->next != NULL) {
-    slow = slow->next;
-    fast = fast->next->next;
-  }
-
-  listint_t *second_half = reverse(&slow);
-  listint_t *first_half = *head;
-
-  while (second_half != NULL) {
-    if (first_half->n != second_half->n) {
-      return (0);
-    }
-    first_half = first_half->next;
-    second_half = second_half->next;
-  }
-
-  return (1);
+	while (head != NULL)
+	{
+		h = h->next;
+		i++;
+	}
+	return (i);
 }
 
-listint_t* reverse(listint_t **head) {
-  listint_t *prev = NULL;
-  listint_t *current = *head;
+/**
+ * is_palindrome - checks if a singly linked list is a palindrome.
+ * @head: singly linked list.
+ * Return: 0 if it is not a palindrome, 1 if it is a palindrome.
+ */
+int is_palindrome(listint_t **head)
+{
+	int a, i;
+	listint_t *tmp = *head;
+	int array;
 
-  while (current != NULL) {
-    listint_t *next = current->next;
-    current->next = prev;
-    prev = current;
-    current = next;
-  }
+	l = len_list(*head);
+	array = malloc(sizeof(int) * l);
 
-  *head = prev;
-  return prev;
-}
+	if (array == NULL)
+	        exit(-1);
+
+	i = 0;
+	while (temp != NULL)
+	{
+		array[i] = temp->n;
+		temp = temp->next;
+		i++;
+	}
+
